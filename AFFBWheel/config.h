@@ -33,7 +33,7 @@
 //settings for encoder
 #define ENCODER_PIN1  0       //encoder pins must be interrupt pins:[0, 1, 2, 3]
 #define ENCODER_PIN2  1    
-#define ENCODER_PPR   400    //PPR = CPR/4
+#define ENCODER_PPR   8600    //PPR = CPR/4
 
 //settings for TLE5010
 #define TLE5010_PIN_CS 1
@@ -61,9 +61,9 @@
 //aux analog axes pins
 //If aux axis is not needed, comment out corresponding line.
 #define PIN_AUX1    A3
-#define PIN_AUX2    A8
-#define PIN_AUX3    A6
-#define PIN_AUX4    A7
+//#define PIN_AUX2    A8
+//#define PIN_AUX3    A6
+//#define PIN_AUX4    A7
 
 
 //different ways of connecting pedals. Choose only one!
@@ -138,7 +138,7 @@
 
 //----------------------------Buttons-------------------------------------
 //different ways of connecting buttons. Choose only one!
-#define BUTTONS_TYPE BT_74HC165       //Use 74HC165 shift registers
+////#define BUTTONS_TYPE BT_74HC165       //Use 74HC165 shift registers
 //#define BUTTONS_TYPE BT_MCP23017    //Use MCP23017 I2C port expanders
 //#define BUTTONS_TYPE BT_CD4021B     //Use CD4021B shift registers
 //#define BUTTONS_TYPE BT_PCF857x     //Use PCF857x I2C port expanders
@@ -180,27 +180,32 @@
 #define APB_BTNS       25,26
 
 //buttons directly connected to pins 
-//#define DPB        //Enable
-#define DPB_PINS       3,4
+#define DPB        //Enable
+#define DPB_PINS       3 // 3,4
 #define DPB_1ST_BTN    1
+
+//button direct to center wheel
+#define DPBC      //enable
+#define DPBC_PINS      8
+//#define DPBC_state      0
 
 //button matrix
 //#define BM            //enable
-#define BM_COL_PINS   2,3,4
-#define BM_ROW_PINS   5,6,7
+#define BM_COL_PINS   5,6,7      //5,6,7,12
+#define BM_ROW_PINS   14,15,16    //14,15,16,4
 #define BM_1ST_BTN    1
 
 
 //analog H-shifter
-//#define ASHIFTER
-#define ASHIFTER_PINX     A4
-#define ASHIFTER_PINY     A5
+#define ASHIFTER
+#define ASHIFTER_PINX     A7  //A4
+#define ASHIFTER_PINY     A6  //a5
 #define ASHIFTER_POS      8   //6 or 8 positions
-#define ASHIFTER_Y1       50 
-#define ASHIFTER_Y2       200
-#define ASHIFTER_X1       64  
-#define ASHIFTER_X2       128  
-#define ASHIFTER_X3       192  
+#define ASHIFTER_Y1       140 
+#define ASHIFTER_Y2       160
+#define ASHIFTER_X1       127  
+#define ASHIFTER_X2       140  
+#define ASHIFTER_X3       160  
 #define ASHIFTER_1ST_BTN  25
 
 //Hat switch
@@ -212,7 +217,7 @@
 #define HAT_CLR_BTNS   //clear buttons state
 
 //----------------------------FFB settings-------------------------------
-//#define MOTOR_ENABLE_PIN      5  //if is set, selected pin will output 1 when FFB is active and 0 otherwise.
+#define MOTOR_ENABLE_PIN      5  //if is set, selected pin will output 1 when FFB is active and 0 otherwise.
 
 //default FFB PWM bitdepth
 #define DEFAULT_FFB_BITDEPTH  9   //15.6 KHz
