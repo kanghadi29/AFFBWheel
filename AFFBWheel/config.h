@@ -198,8 +198,8 @@
 
 //analog H-shifter
 #define ASHIFTER
-#define ASHIFTER_PINX     A7  //A4
-#define ASHIFTER_PINY     A6  //a5
+#define ASHIFTER_PINX     A4  //A7
+#define ASHIFTER_PINY     A5  //a6
 #define ASHIFTER_POS      8   //6 or 8 positions
 #define ASHIFTER_Y1       140 
 #define ASHIFTER_Y2       160
